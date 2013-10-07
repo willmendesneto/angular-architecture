@@ -22,5 +22,6 @@ angular.module('AngularArchitectureApp', ['firebase', 'ngRoute', 'chieffancypant
               }) + 'Ctrl';
               return controller;
           }
-      });
+      })
+      .otherwise({ redirectTo: '/base' });
   }]);
