@@ -1,0 +1,43 @@
+<p>This is the grid-handson view.</p>
+
+<h2>Segunda tabela</h2>
+<form autocomplete="off">
+  <input type="hidden" ng-model="product.hashId" />
+  <label>Title</label>
+  <input type="text"  ng-model="product.title" />
+  <label>Category</label>
+  <input type="text" ng-model="product.category" />
+  <label>Google ID</label>
+  <input type="text" ng-model="product.google_id" />
+  <input type="submit" class="btn btn-danger" ng-click="save()" />
+</form>
+
+<label for="searchSnippet">Search Snippet: </label>
+<input type="search" name="searchSnippet" id="searchSnippet" data-ng-model="searchSnippet" />
+
+<p>Products {{products.length}}</p>
+<table class="table table table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ID-2</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Google ID</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="(id, item) in products  | filter:searchSnippet">
+      <td>{{item.id}}</td>
+      <td>{{ id }}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.category}}</td>
+      <td>{{item.google_id}}</td>
+      <td>
+        <a href="javascript:void(0);" class="btn" ng-click="editProduct(id)">edit</a>
+        <a href="javascript:void(0);" class="btn btn-danger" ng-click="deleteProduct(id)">excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
