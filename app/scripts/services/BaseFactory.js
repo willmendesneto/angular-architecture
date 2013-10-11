@@ -15,7 +15,6 @@ angular.module('AngularArchitectureApp')
 
     return {
         init: function (url) {
-            console.log('url: ',url);
             _url = url;
             _DB = new Firebase( _url );
         },

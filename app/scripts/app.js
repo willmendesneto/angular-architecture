@@ -1,11 +1,9 @@
 'use strict';
 
-angular.module('AngularArchitectureApp', ['firebase', 'ngRoute', 'chieffancypants.loadingBar', 'ngResource'])
+angular.module('AngularArchitectureApp', ['firebase', 'ngRoute', 'ngResource'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
-  //$locationProvider
-    //.html5Mode(true)
-    //.hashPrefix('!');
+  $locationProvider.hashPrefix('!');
 
     $routeProvider
       //  Default call
