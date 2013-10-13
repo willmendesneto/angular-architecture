@@ -22,7 +22,7 @@ angular.module('AngularArchitectureApp')
             var obj = {};
             angular.forEach( _fields, function( field ) {
                 //  Works fine, but it's better use "eval()"
-                obj[field] = eval('item.' + field + ' || "" ');
+                obj[field] = item[field] || '';
             });
             return obj;
         },

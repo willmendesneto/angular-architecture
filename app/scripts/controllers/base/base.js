@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('AngularArchitectureApp')
-  .controller('BaseCtrl', function ($scope, $routeParams, BaseService) {
+  .controller('BaseCtrl', function ($scope, $routeParams, $route, $location, BaseService) {
 
     angular.extend($scope, BaseService);
 
@@ -25,7 +25,7 @@ angular.module('AngularArchitectureApp')
         {id: '', title : '', category : '', google_id: ''}
     ];
 
-    this.initOnDataLoaded = function onDataLoaded($scope, $routeParams) {
+    this.initOnDataLoaded = function onDataLoaded($scope, $routeParams, $route, $location) {
 
         $scope.BaseFactory.setListItems( $scope.products )
                             .setFields( $scope.fields );
@@ -47,6 +47,7 @@ angular.module('AngularArchitectureApp')
                 $scope.create(product);
             }
             $scope.reset();
+            $location.path('/base');
         };
 
         /**
@@ -66,7 +67,8 @@ angular.module('AngularArchitectureApp')
         /**
          * Editing a individual snippet
          */
-        $scope.editProduct = function( id ){
+        $scope.edit = function( id ){
+            var id = $routeParams.id;
             $scope.product = $scope.products[ id ];
             $scope.product.hashId = id;
         };
@@ -88,13 +90,18 @@ angular.module('AngularArchitectureApp')
             $scope.products = $scope.BaseFactory.delete( id );
         };
 
+        //  Calling routeParam method
+        if ($route.current.method !== undefined) {
+            $scope[$route.current.method]();
+        }
+
     };
 
     /**
      * ...And the application begin here!
      */
     $scope.angularFire( $scope.BaseFactory.getDB() , $scope, 'products', {}).then(function () {
-        this.initOnDataLoaded($scope, $routeParams);
+        this.initOnDataLoaded($scope, $routeParams, $route, $location);
     }.bind(this));
 
   });

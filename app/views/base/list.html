@@ -1,16 +1,8 @@
 <p>This is the grid-handson view.</p>
 
 <h2>Segunda tabela</h2>
-<form autocomplete="off">
-  <input type="hidden" ng-model="product.hashId" />
-  <label>Title</label>
-  <input type="text"  ng-model="product.title" />
-  <label>Category</label>
-  <input type="text" ng-model="product.category" />
-  <label>Google ID</label>
-  <input type="text" ng-model="product.google_id" />
-  <input type="submit" class="btn btn-danger" ng-click="save()" />
-</form>
+
+<a href="#!/base/new" class="btn">Add new </a>
 
 <label for="searchSnippet">Search Snippet: </label>
 <input type="search" name="searchSnippet" id="searchSnippet" data-ng-model="searchSnippet" />
@@ -35,7 +27,7 @@
       <td>{{item.category}}</td>
       <td>{{item.google_id}}</td>
       <td>
-        <a href="javascript:void(0);" class="btn" ng-click="editProduct(id)">edit</a>
+        <a href="#!/base/{{ id }}/edit" class="btn" ng-click="editProduct(id)">edit</a>
         <a href="javascript:void(0);" class="btn btn-danger" ng-click="deleteProduct(id)">excluir</a>
       </td>
     </tr>

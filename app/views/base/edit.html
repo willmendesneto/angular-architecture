@@ -1,0 +1,13 @@
+<h2>Edit product: {{ product.title }}</h2>
+<form autocomplete="off">
+  <input type="hidden" ng-model="product.hashId" />
+  <label>Title</label>
+  <input type="text"  ng-model="product.title" />
+  <label>Category</label>
+  <input type="text" ng-model="product.category" />
+  <label>Google ID</label>
+  <input type="text" ng-model="product.google_id" />
+  <br/>
+  <a href="#!/base" class="btn">Cancel</a>
+  <input type="submit" class="btn btn-danger" ng-click="save()" />
+</form>
