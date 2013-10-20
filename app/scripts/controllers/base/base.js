@@ -87,7 +87,9 @@ angular.module('AngularArchitectureApp')
          * @return {bool} Boolean value of return
          */
         $scope.deleteProduct = function( id ){
-            $scope.products = $scope.BaseFactory.delete( id );
+            if (confirm('Esta ação é irreversível, deseja mesmo excluir este produto?') ) {
+                $scope.products = $scope.BaseFactory.delete( id );
+            }
         };
 
         //  Calling routeParam method
