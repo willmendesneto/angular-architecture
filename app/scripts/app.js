@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('AngularArchitectureApp', ['firebase', 'ngRoute', 'ngResource'])
+angular.module('AngularArchitectureApp', ['firebase', 'ngRoute', 'ngResource', 'chieffancypants.loadingBar'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
   $locationProvider.hashPrefix('!');
