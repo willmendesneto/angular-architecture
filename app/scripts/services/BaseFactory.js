@@ -1,3 +1,4 @@
+/* globals Firebase */
 'use strict';
 
 angular.module('AngularArchitectureApp')
@@ -48,18 +49,21 @@ angular.module('AngularArchitectureApp')
             return total;
         },
         create: function (item) {
-            var hashKey = new Firebase(_url).push().name();
+            var hashKey = new Firebase(_url).push().key();
             item = this.createValueObject(item);
             _items[hashKey] = item;
             _items[ hashKey ].id = this.countTotalItems();
+            _items.$add(_items[ hashKey ]);
             return _items;
         },
         delete: function (id) {
+            _items.$remove(_items[ id ]);
             delete _items[ id ];
             return _items;
         },
         update: function (item) {
             _items[ item.hashId ] = item;
+            _items.$save(_items[ item.hashId ]);
             return _items;
         }
     };

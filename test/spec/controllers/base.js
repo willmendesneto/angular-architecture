@@ -13,11 +13,11 @@ describe('Controller: BaseCtrl', function () {
     scope = $rootScope.$new();
     BaseCtrl = $controller('BaseCtrl', {
       $scope: scope
+      // place here mocked dependencies
     });
   }));
 
   it('should attach a list of awesomeThings to the scope', function () {
-    //expect(scope.awesomeThings.length).toBe(3);
-    expect(1).toBe(1);
+    expect(BaseCtrl.awesomeThings.length).toBe(3);
   });
 });

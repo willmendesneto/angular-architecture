@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: baseService', function () {
+describe('Service: BaseService', function () {
 
   // load the service's module
   beforeEach(module('AngularArchitectureApp'));
 
   // instantiate service
-  var baseService;
-  beforeEach(inject(function (_baseService_) {
-    baseService = _baseService_;
+  var BaseService;
+  beforeEach(inject(function (_BaseService_) {
+    BaseService = _BaseService_;
   }));
 
   it('should do something', function () {
-    //expect(!!baseService).toBe(true);
+    expect(!!BaseService).toBe(true);
   });
 
 });

@@ -7,29 +7,30 @@
         </a>
     </div>
 </div>
-
-<table class="span12 table table table-striped" >
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>ID-2</th>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Google ID</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="(id, item) in products  | filter:{item: searchItem} ">
-      <td>{{item.id}}</td>
-      <td>{{ id }}</td>
-      <td>{{item.title}}</td>
-      <td>{{item.category}}</td>
-      <td>{{item.google_id}}</td>
-      <td>
-        <a href="#!/base/{{ id }}/edit" class="btn" ng-click="editProduct(id)">edit</a>
-        <a href="javascript:void(0);" class="btn btn-danger" ng-click="deleteProduct(id)">excluir</a>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div ng-show="products.length > 0">
+  <table class="span12 table table table-striped" >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>ID-2</th>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Google ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(id, item) in products  | filter:{item: searchItem} ">
+        <td>{{item.id}}</td>
+        <td>{{ id }}</td>
+        <td>{{item.title}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.google_id}}</td>
+        <td>
+          <a href="#!/base/{{ id }}/edit" class="btn" ng-click="editProduct(id)">edit</a>
+          <a href="javascript:void(0);" class="btn btn-danger" ng-click="deleteProduct(id)">excluir</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

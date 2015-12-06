@@ -2,24 +2,35 @@
   "name": "AngularArchitecture",
   "version": "0.0.0",
   "dependencies": {
-    "angular": "~1.0.7",
-    "json3": "~3.2.4",
-    "jquery": "~1.9.1",
-    "bootstrap-sass": "~2.3.1",
-    "es5-shim": "~2.0.8",
-    "angular-resource": "~1.0.7",
-    "angular-cookies": "~1.0.7",
-    "angular-sanitize": "~1.0.7",
-    "angular-fire": "~0.3.1",
-    "smart-table": "~0.1.3",
-    "angular-blocks": "~0.1.8",
-    "angular-loading-bar": "~0.0.4",
-    "angular-animate.css": "~1.0.1",
-    "angular-animate": "~1.2.0-rc.2",
-    "my-angular-route": "https://github.com/willmendesneto/my-angular-route.git"
+    "json3": "~3.3.2",
+    "jquery": "~2.1.4",
+    "es5-shim": "~4.3.1",
+    "angular-resource": "~1.4.8",
+    "angular-cookies": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "angularfire": "~1.1.3",
+    "angular-loading-bar": "~0.8.0",
+    "angular-animate": "~1.4.8",
+    "my-angular-route": "https://github.com/willmendesneto/my-angular-route.git",
+    "angular-smart-table": "~2.1.5",
+    "angular": "~1.4.8",
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6"
   },
   "devDependencies": {
-    "angular-mocks": "~1.0.7",
-    "angular-scenario": "~1.0.7"
+    "angular-mocks": "^1.4.0"
+  },
+  "appPath": "app",
+  "moduleName": "AngularArchitectureApp",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "~1.4.8"
   }
 }
